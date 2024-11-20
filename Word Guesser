@@ -1,0 +1,27 @@
+# Please write your code here for Word Splitting lab problem.
+secret_word = "python"
+
+guess = input("Enter your guess:").lower()
+tries = 1
+tries_left = 3 - tries
+for i in range(3):
+  if guess == 'python':
+    print(f"Correct! You got it in {tries} tries!")
+    break
+  else:
+    print(f"Sorry. That is incorrect. You have {tries_left} tries left.")
+    # print(3-'tries')
+  if len(guess)<6:
+    print("Hint: Your guess is too short")
+    guess = input("Enter your guess:").lower()
+  elif len(guess)>6:
+    print("Hint: Your guess is too long")
+    guess = input("Enter your guess:").lower()
+  else:
+    print("Hint: Your guess is the correct length")
+    guess = input("Enter your guess:").lower()
+  tries += 1
+  tries_left -=1
+  if tries == 3 and guess != 'python':
+    print(f"Game over! The correct word is {secret_word}.")
+    break
