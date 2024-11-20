@@ -1,0 +1,17 @@
+guess = 0
+keep_asking = 0
+while keep_asking == 0:
+    num = int(input("Enter a number:"))
+    guess += 1
+    for i in range(2,num):
+        if num % i == 0:
+            print("Sorry, that's not a prime number.", i ,"is a factor of",num,".")
+            break
+        if i == num - 1:
+            print("Congratulations!", num ,"is a prime number.")
+            if guess == 1:
+                print("It took you",guess,"guess to find a prime.")
+            if guess > 1:
+                print("It took you", guess, "guesses to find a prime.")
+            
+            keep_asking = 1
